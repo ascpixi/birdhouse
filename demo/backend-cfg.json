@@ -1,0 +1,11 @@
+{
+    "port": 3000,
+    "frontendUrl": "http://localhost:5173",
+    "backendUrl": "http://localhost:3000",
+    "userContentPath": "user-content",
+    "staticContentPath": "static",
+    "staticContent": {
+        "defaultAvatar": "default-avatar.png",
+        "defaultBanner": "default-banner.jpg"
+    }
+}

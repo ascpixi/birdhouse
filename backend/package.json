@@ -1,0 +1,29 @@
+{
+  "name": "birdhouse-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx tsc && node ./dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "file-type": "^19.6.0",
+    "mysql": "^2.18.1",
+    "uuid": "^11.0.2",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/mysql": "^2.15.26",
+    "@types/node": "^22.7.9",
+    "typescript": "^5.6.3"
+  }
+}

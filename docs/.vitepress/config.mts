@@ -5,6 +5,7 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 export default withMermaid({
   title: "Birdhouse",
   description: "API Documentation",
+  base: "/birdhouse/",
   locales: {
     root: {
       label: "English",

@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Birdhouse"
-  text: "Dokumentacja API"
+  text: "Dokumentacja"
   image:
     src: /icon-gradient.svg
     alt: Birdhouse

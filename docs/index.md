@@ -6,7 +6,7 @@ hero:
   name: "Birdhouse"
   text: "API Documentation"
   image:
-    src: /resources/icon-gradient.svg
+    src: /public/icon-gradient.svg
     alt: Birdhouse
   actions:
     - theme: brand

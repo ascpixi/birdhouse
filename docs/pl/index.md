@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "Birdhouse"
-  text: "Dokumentacja"
+  name: "Dokumentacja"
+  text: "Birdhouse"
   image:
     src: /icon-gradient.svg
     alt: Birdhouse

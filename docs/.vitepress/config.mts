@@ -17,6 +17,7 @@ export default withMermaid({
       themeConfig: {
         nav: [
           { text: 'Strona główna', link: '/pl' },
+          { text: 'Konfiguracja', link: '/pl/setup.md' },
           { text: 'API HTTP', link: '/pl/api/general.md' },
         ],
 
@@ -47,6 +48,7 @@ export default withMermaid({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Getting started', link: '/setup.md' },
       { text: 'HTTP API', link: '/api/general.md' },
     ],
     

@@ -75,6 +75,6 @@ export default withMermaid({
       { icon: 'github', link: 'https://github.com/ascpixi/birdhouse' }
     ],
 
-    logo: "/public/icon.svg"
+    logo: "/icon.svg"
   }
 })

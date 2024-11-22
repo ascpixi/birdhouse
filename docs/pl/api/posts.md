@@ -1,8 +1,6 @@
 # Grupa endpointów HTTP API `/api/posts`
 Endpoint `/api/posts` w HTTP API Birdhouse służy do tworzenia, pobierania i interakcji z postami tworzonymi przez użytkowników.
 
----
-
 ## GET `/api/posts/:id`
 Pobiera post o podanym ID. ID posta jest przekazywane jako końcówka URL, zastępując symbol zastępczy `:id`.
 
@@ -16,8 +14,6 @@ interface {
     author: ApiUser;
 }
 ```
-
----
 
 ## POST `/api/posts/create`
 Tworzy nowy post użytkownika. W ciele żądania musi być obecne przynajmniej jedno z pól: `text` lub `media`.
@@ -52,8 +48,6 @@ interface {
 }
 ```
 
----
-
 ## POST `/api/posts/interact`
 Dodaje lub usuwa interakcję z postem (np. polubienie lub udostępnienie). Jeden użytkownik może mieć maksymalnie jedną interakcję danego typu dla jednego posta.
 
@@ -75,8 +69,6 @@ interface {
 }
 ```
 
----
-
 ## GET `/api/posts/by_user/:id`
 Pobiera wszystkie posty utworzone przez danego użytkownika, w tym odpowiedzi. ID użytkownika jest przekazywane jako końcówka URL, zastępując symbol zastępczy `:id`.
 
@@ -89,8 +81,6 @@ interface {
     posts: ApiPost[];
 }
 ```
-
----
 
 ## GET `/api/posts/thread/:id`
 Pobiera widok wątku dla danego posta, który obejmuje sam post, post, na który odpowiada (jeśli istnieje), oraz oś czasu z jego bezpośrednimi odpowiedziami. ID posta jest przekazywane jako końcówka URL, zastępując symbol zastępczy `:id`.

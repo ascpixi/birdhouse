@@ -8,8 +8,6 @@ Każdy endpoint w dokumentacji HTTP API określa swój stan **Authentication**, 
 - **"optional"** - uwierzytelnianie nie jest wymagane, ale może rozszerzyć funkcję endpointu, np. zwracając dane specyficzne dla użytkownika wykonującego żądanie.
 - **"required"** - uwierzytelnianie jest wymagane, a żądanie zakończy się niepowodzeniem w przypadku braku lub nieprawidłowego tokena uwierzytelniającego.
 
----
-
 ## POST `/api/auth/login`
 Uzyskuje token uwierzytelniający dla istniejącego konta Birdhouse. Token może wygasnąć po pewnym czasie, po czym użytkownik będzie musiał ponownie się uwierzytelnić jako środek bezpieczeństwa.
 
@@ -33,8 +31,6 @@ interface {
     token: string;
 }
 ```
-
----
 
 ## POST `/api/auth/register`
 Tworzy nowe konto Birdhouse i uzyskuje token uwierzytelniający dla tego konta. Zwrócony token działa w ten sam sposób, co token uzyskany za pomocą `/api/auth/login`. Hasło musi spełniać wymagania - pole `pwd`, po dekodowaniu Base64, musi mieć co najmniej 6 znaków.
@@ -61,8 +57,6 @@ interface {
     token: string;
 }
 ```
-
----
 
 ## POST `/api/auth/invalidate`
 Unieważnia istniejący token uwierzytelniający, co uniemożliwia jego dalsze użycie do prób uwierzytelnienia. Ten endpoint należy wywołać podczas wylogowywania.

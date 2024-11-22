@@ -53,7 +53,7 @@ export function useAuthEndpoints(app: Express) {
         if (params === null)
             return;
 
-        if (!verifyPasswordStrength(params.pwd)) {
+        if (!verifyPasswordStrength(atob(params.pwd))) {
             res.status(400).json(apiError("Your password is too weak."));
             return;
         }

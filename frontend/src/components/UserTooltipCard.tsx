@@ -23,7 +23,7 @@ export function UserTooltipCard({ user, onMutate }: {
   }
 
   return (
-    <Card shadow="none" className="border-none bg-transparent">
+    <Card shadow="none" className="border-none bg-transparent max-w-[400px]">
       <CardHeader className="justify-between gap-16">
         <div className="flex gap-3">
           <Avatar isBordered radius="full" size="md" src={user.avatar} />

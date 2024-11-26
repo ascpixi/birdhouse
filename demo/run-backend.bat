@@ -10,5 +10,6 @@ set DB_DATABASE=birdhouse
 
 call npm install
 call npm run serve
+if %errorlevel% neq 0 pause
 
 popd

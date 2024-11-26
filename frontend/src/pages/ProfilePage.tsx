@@ -31,6 +31,8 @@ export function ProfilePage() {
   const [editorName, setEditorName] = useState("");
   const [editorBio, setEditorBio] = useState("");
 
+  const [isFollowed, setIsFollowed] = useState(false);
+
   // These are blob URIs to actually display the avatar/banner before it's uploaded on the
   // server. When the user selects "Apply" in the editor, the media is uploaded, and the
   // returned media URLs are sent via `/api/user/modify`. The actual avatar/banner change
@@ -81,6 +83,8 @@ export function ProfilePage() {
         return;
       }
 
+      setIsFollowed(targetUser.meta.followedByUser ?? false);
+
       await refreshTimeline();
     })().catch(console.error);
   }, [handle]);
@@ -119,6 +123,21 @@ export function ProfilePage() {
 
     console.log(`User data for ${handle} fetched.`, userResp);
     return userResp;
+  }
+  
+  async function onFollowButtonClick() {
+    const res = await api.user.follow(isFollowed ? "remove" : "add", targetUser!.id);
+    if (res.status !== "ok") {
+      console.error(`Encountered an error while trying to follow ${targetUser!.id}`, res);
+      alert(`Sorry, we couldn't follow that user. ${res.error}`);
+      return;
+    }
+
+    setIsFollowed(!isFollowed);
+    setTargetUser({
+      ...targetUser!,
+      followers: targetUser!.followers + (isFollowed ? -1 : 1) 
+    });
   }
 
   if (notFound)
@@ -188,7 +207,14 @@ export function ProfilePage() {
             {
               isSelf
                 ? <Button color="primary" variant="bordered" isDisabled={currUser === null} onClick={editorModalState.onOpen}>Edit profile</Button>
-                : <Button color="primary" isDisabled={targetUser === null}>Follow</Button>
+                : <Button
+                    className={`${isFollowed ? "bg-transparent text-foreground" : ""}`}
+                    color="primary"
+                    variant={isFollowed ? "bordered" : "solid"}
+                    onPress={onFollowButtonClick}
+                  >
+                    {isFollowed ? "Unfollow" : "Follow"}
+                  </Button>
             }
 
           </div>

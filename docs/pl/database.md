@@ -24,7 +24,6 @@ erDiagram
         INT author_id
         TEXT text_content
         TEXT media
-        TEXT media_type
         TIMESTAMP created_on
         INT reply_to
         INT num_likes

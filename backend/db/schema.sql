@@ -26,7 +26,6 @@ CREATE TABLE bh_posts (
     author_id       INT             NOT NULL,
     text_content    TEXT            NOT NULL,
     media           TEXT,
-    media_type      TEXT,
     created_on      TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     reply_to        INT,
     num_likes       INT UNSIGNED    NOT NULL,  -- denormalized field from bh_interactions
